@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-&6!60n5-(f%ws_)f=q33*!(+kau&e_n#t@tjn16k_)jqww9kh5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [' https://tecweb-projeto-exemplo-w1q1.onrender.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 # Application definition
 
@@ -78,11 +78,14 @@ WSGI_APPLICATION = 'editora.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='',
-        conn_max_age=600,
-        ssl_require=not DEBUG
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'getit',
+        'USER': 'getituser',
+        'PASSWORD': 'getitsenha',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
